@@ -1,0 +1,61 @@
+sudo: false
+language: clojure
+jdk:
+  - oraclejdk8
+cache: bundler
+
+services:
+  - mysql
+
+env: stockroom_ENV=test; ELASTIC_BEANSTALK_LABEL=$TRAVIS_COMMIT
+
+install:
+  - lein deps
+  - bundle install
+
+before_script: bundle exec rake db:setup
+
+script:
+  - lein spec
+  - lein run -m stockroom.task.precompile
+  - lein with-profile prod uberjar
+  - zip build.zip -r .ebextensions -r db -r resources/public target/stockroom-1.0.0-standalone.jar Gemfile Gemfile.lock Procfile Rakefile
+
+branches:
+  only:
+    - master
+
+deploy:
+  - provider: elasticbeanstalk
+    access_key_id: AKIAJC3DK36LQKGMV4ZA
+    secret_access_key:
+      secure: "ikeeMsZ+8wSNpSCd4Ne+MVg7L1LFhAlO3acc2WC86DfutlDltSAd+OgaylLNPLJvShwTRMB+iqjTMwJM+4b0yFXoI57JUrccYKy9bQa1KhmwXmBBdtjf07oA3fixKJKlbj7prPCMta3HofDFxvd2noPdM7gzI2mhU6zn2X+SEZM="
+    region: us-east-1
+    app: stockroom
+    env: stockroom-staging
+    bucket_name: stockroom-artifacts
+    skip_cleanup: true
+    zip_file: build.zip
+    only_create_app_version: true
+    on:
+      repo: ryanzverner/stockroom
+      branch: master
+  - provider: elasticbeanstalk
+    access_key_id: AKIAJGQ3Z3DVV3NLHQHQ
+    secret_access_key:
+      secure: "eXMVMAMWquoFOx0qeXgE66MmmZ2wBEtuwTFZF10lGp2jolGaNTc6m5ANGMRYt3X0RZKKT6ceZMCBDBRdLG9sNovz0kLrOebBoLa0qLldDnd+EGwqck/MwOB2OdqreCTDWRFcbeACVwlRZwI1bt8yrb796l/8FZYmgdyB5RdJnN8="
+    region: us-east-1
+    app: stockroom
+    env: stockroom-production
+    bucket_name: stockroom-build-artifacts
+    skip_cleanup: true
+    zip_file: build.zip
+    only_create_app_version: true
+    on:
+      repo: ryanzverner/stockroom
+      branch: master
+
+notifications:
+  email:
+    on_success: change
+    on_failure: always

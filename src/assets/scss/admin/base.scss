@@ -1,0 +1,202 @@
+@import 'mixins';
+
+
+
+/*
+  ===============================================================
+  =GL Globals
+  =TB Table Styling
+  =LA Layout Framework
+  =MQ Media Queries
+  ===============================================================
+*/
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body,
+html {
+  font-family: "FrescoSansPlusPro-Normal", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+
+.container {
+  margin: 2% auto;
+  padding: 10px 0;
+  width: 95%;
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "FrescoSansPlusBold", sans-serif;
+  font-weight: 800;
+  margin: .5em 0;
+  span {
+    font-family: "FrescoSansPlusPro-Normal";
+    color: #999;
+  }
+}
+
+a, a:visited {
+  color: #0074D9;
+  &:hover {
+    transition: all .15s ease-in;
+    color: #000;
+  }
+}
+
+a.action {
+  background: $blue;
+  border-radius: 4px;
+  color: white;
+  display: inline-block;
+  font-size: 90%;
+  padding: 10px 15px;
+  text-decoration: none;
+  &:hover {
+    background: $blue-dark;
+    color: white;
+  }
+}
+
+
+/*
+  =================
+  =TB Table Styling
+  =================
+*/
+table {
+  border: 1px solid #ccc;
+  border-collapse: collapse;
+  margin: 10px 0;
+  padding: 10px;
+  thead {
+    font-family: 'FrescoSansPlusBold';
+    td {
+      border: none;
+    }
+  }
+  td {
+    border: 1px solid #ccc;
+    padding: 4px 8px;
+  }
+}
+
+
+
+.notice {
+  color: $hairline;
+  margin: 0 auto;
+  padding: 8px 0;
+}
+
+
+.action-title {
+  display: inline-block;
+  margin-right: .5em;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+  ====================
+  =LA Layout Framework
+  ====================
+*/
+
+.row {
+  margin: 0;
+  padding: 0;
+}
+
+.column {
+  float: left;
+  margin-left: 5%;
+  &:first-child {
+    margin-left: 0;
+  }
+  &.full {
+    width: 100%;
+    margin: 0;
+  }
+  &.two-thirds {
+    width: 65%;
+  }
+  &.half {
+    width: 47.5%;
+  }
+  &.one-third {
+    width: 30%;
+  }
+  &.one-fourth {
+    width: 21.2%;
+  }
+  &.three-fourths {
+    width: 73.8%;
+  }
+  &.two-fifths {
+    width: 40%;
+  }
+  &.three-fifths {
+    width: 55%;
+  }
+  &.half-margin {
+    margin-left: 3%;
+    .container {
+      width: 100%;
+    }
+  }
+}
+
+/*
+  =================
+  =MQ Media Queries
+  =================
+*/
+
+@media screen and (max-width: 600px) {
+  body {
+    font-size: 100%;
+  }
+
+  .column {
+    margin: 0;
+    &.full,
+    &.two-thirds,
+    &.half,
+    &.one-third,
+    &.one-fourth,
+    &.two-fifths,
+    &.three-fourths,
+    &.three-fifths {
+      width: 100%;
+    }
+    &.half-margin {
+      margin: 0;
+      .container {
+        width: 90%;
+      }
+    }
+    &.flow-opposite {
+      float: none;
+      margin: 0 0 1.5em 0;
+    }
+  }
+}

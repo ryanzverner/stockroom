@@ -1,0 +1,28 @@
+$white: #fff;
+$black: #111;
+$blue: #0074d9;
+$blue-dark: #0067C0;
+$red: #CA3B33;
+$red-dark: #A02E27;
+
+$hairline: #ddd;
+
+
+input[type='submit'] {
+  background: $blue;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  padding: 4px 8px;
+  transition: all .15s ease-in;
+  &:hover {
+    background: $blue-dark;
+    cursor: pointer;
+  }
+  &.caution {
+    background: $red;
+    &:hover {
+      background: $red-dark;
+    }
+  }
+}

@@ -1,0 +1,67 @@
+/* Fonts
+-------------------------------------------------------------- */
+@font-face {
+    font-family: 'FrescoSansPlusPro-Normal';
+    src: asset-url('frescosanspluspro-normal-webfont.eot');
+    src: asset-url('frescosanspluspro-normal-webfont.eot?#iefix') format('embedded-opentype'),
+         asset-url('frescosanspluspro-normal-webfont.woff') format('woff'),
+         asset-url('frescosanspluspro-normal-webfont.ttf') format('truetype'),
+         asset-url('frescosanspluspro-normal-webfont.svg?#FrescoSansPlusPro-Normal') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'FrescoSansPlusPro-Normal-Italic';
+    src: asset-url('frescosanspluspro-normalitalic-webfont.eot');
+    src: asset-url('frescosanspluspro-normalitalic-webfont.eot?#iefix') format('embedded-opentype'),
+         asset-url('frescosanspluspro-normalitalic-webfont.woff') format('woff'),
+         asset-url('frescosanspluspro-normalitalic-webfont.ttf') format('truetype'),
+         asset-url('frescosanspluspro-normalitalic-webfont.svg?#FrescoSansPlusPro-Normal-Italic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'FrescoSansPlusBold';
+    src: asset-url('frescosansplus-bold-webfont.eot');
+    src: asset-url('frescosansplus-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         asset-url('frescosansplus-bold-webfont.woff') format('woff'),
+         asset-url('frescosansplus-bold-webfont.ttf') format('truetype'),
+         asset-url('frescosansplus-bold-webfont.svg?#FrescoSansPlusBold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'FrescoSansPlusSCNormalRegular';
+    src: asset-url('frescosansplussc-normal-webfont.eot');
+    src: asset-url('frescosansplussc-normal-webfont.eot?#iefix') format('embedded-opentype'),
+         asset-url('frescosansplussc-normal-webfont.woff') format('woff'),
+         asset-url('frescosansplussc-normal-webfont.ttf') format('truetype'),
+         asset-url('frescosansplussc-normal-webfont.svg?#FrescoSansPlusSCNormalRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'FrescoPlusNormal';
+    src: asset-url('frescoplus-normal-webfont.eot');
+    src: asset-url('frescoplus-normal-webfont.eot?#iefix') format('embedded-opentype'),
+         asset-url('frescoplus-normal-webfont.woff') format('woff'),
+         asset-url('frescoplus-normal-webfont.ttf') format('truetype'),
+         asset-url('frescoplus-normal-webfont.svg?#FrescoPlusNormal') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'FrescoPlusNormalItalic';
+    src: asset-url('frescoplus-normalitalic-webfont.eot');
+    src: asset-url('frescoplus-normalitalic-webfont.eot?#iefix') format('embedded-opentype'),
+         asset-url('frescoplus-normalitalic-webfont.woff') format('woff'),
+         asset-url('frescoplus-normalitalic-webfont.ttf') format('truetype'),
+         asset-url('frescoplus-normalitalic-webfont.svg?#FrescoPlusNormalItalic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}

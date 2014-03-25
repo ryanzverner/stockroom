@@ -1,0 +1,26 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    blankslate (2.1.2.4)
+    edn (1.0.3)
+      parslet (~> 1.4.0)
+    mysql2 (0.4.5)
+    parslet (1.4.0)
+      blankslate (~> 2.0)
+    rake (10.1.1)
+    sequel (4.42.1)
+    sequel-rake-tasks (0.0.4)
+      rake (>= 10.1.0)
+      sequel (~> 4.2)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  edn (= 1.0.3)
+  mysql2 (= 0.4.5)
+  rake (= 10.1.1)
+  sequel-rake-tasks (= 0.0.4)
+
+BUNDLED WITH
+   1.13.7
